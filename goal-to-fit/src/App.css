@@ -1,0 +1,59 @@
+.section {
+  height: 100%;
+}
+.d-flex {
+  display: flex;
+}
+.d-inline {
+  display: inline-block;
+}
+.align-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.space-between {
+  justify-content: space-between;
+}
+.h-40 {
+  height: 40px;
+}
+.w-100p{
+  width: 100%;
+}
+.w-240 {
+  width: 240px;
+}
+.w-500 {
+  width: 500px;
+}
+.field {
+  border: 0px;
+  border-bottom: 2px solid #d7d7d7;
+  outline: 0;
+  color: #4d4d4d;
+  padding: 5px 0;
+  background: transparent;
+  transition: 0.2s;
+}
+.field:focus {
+  border: 0px;
+  border-bottom: 2px solid #9c9c9c;
+  outline: 0;
+  color: #4d4d4d;
+  padding: 5px 0;
+  background: transparent;
+}
+.mb-24 {
+  margin-bottom: 24px;
+}
+.text-primary {
+  color: #929292;
+}
+.text-secondary {
+  color: #f85f6a;
+}
