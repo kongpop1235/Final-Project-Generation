@@ -1,11 +1,12 @@
 import React from "react";
 
+import "./Login.css";
 import Banner from "../../Component/Banner/Banner";
 
 const Login = () => {
   return (
-    <main>
-      <div className="section">
+    <main className="section d-flex align-center text-primary">
+      <div>
         <div>
           <Banner>Login</Banner>
         </div>
