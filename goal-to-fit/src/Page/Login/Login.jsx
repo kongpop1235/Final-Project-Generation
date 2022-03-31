@@ -35,7 +35,9 @@ const Login = () => {
           <Label htmlFor="password">Password</Label>
           <br />
           <Input type="password" className="w-500 field mb-24"></Input>
-          <Input type="submit" value="Sing in" className="btn mb-24 h-40 text-center" onClick={signInClick}></Input>
+          <span onClick={signInClick}>
+            <Input type="submit" value="Sing in" className="btn mb-24 h-40 text-center"></Input>
+          </span>
         </form>
         <div className="d-flex space-between">
           <a className="text-primary" href="#" onClick={forgotPasswordClick}>

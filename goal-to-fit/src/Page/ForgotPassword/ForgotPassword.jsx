@@ -17,6 +17,9 @@ const ForgotPassword = () => {
     const signUpClick = () => {
         navigate("/signUp")
     }
+    const Changepassword = () => {
+        navigate("/")
+    }
 
     return (
         <section className="section-500 d-flex align-center text-primary">
@@ -32,7 +35,9 @@ const ForgotPassword = () => {
                     <Label htmlFor="phone">Phone number</Label>
                     <br />
                     <Input type="tel" className="w-500 field mb-24"></Input>
-                    <Input type="submit" value="Change password" className="btn mb-24 h-40 text-center"></Input>
+                    <span onClick={Changepassword}>
+                        <Input type="submit" value="Change password" className="btn mb-24 h-40 text-center"></Input>
+                    </span>
                 </form>
                 <div className="d-flex space-between">
                     <a href="#" onClick={signInClick}>Have an Account?</a>

@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./InputDate.css";
 
 const InputDate = () => {
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate, className] = useState(new Date());
     return (
         <DatePicker
             id="DatePicker"
@@ -19,7 +19,6 @@ const InputDate = () => {
             dateFormat="yyyy"
         />
     );
-
 }
 
 export default InputDate;

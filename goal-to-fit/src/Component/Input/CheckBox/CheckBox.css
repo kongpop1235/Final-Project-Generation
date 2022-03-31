@@ -1,4 +1,9 @@
-#ul-check,
+#ul-check {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
 #li-check {
   list-style: none;
   margin: 0;

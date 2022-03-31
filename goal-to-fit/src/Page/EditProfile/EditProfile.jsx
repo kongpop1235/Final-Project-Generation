@@ -1,4 +1,4 @@
-import   React         from "react"           ;
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 import "./EditProfile.css";
 
 // * component
-import Label      from "../../Component/Input/LabelText/LabelText"  ;
-import InputText  from "../../Component/Input/InputText/InputText"  ;
+import Label from "../../Component/Input/LabelText/LabelText";
+import InputText from "../../Component/Input/InputText/InputText";
 import InputRadio from "../../Component/Input/InputRadio/InputRadio";
-import InputDate  from "../../Component/Input/InputDate/InputDate"  ;
-import CheckBox   from "../../Component/Input/CheckBox/CheckBox"    ;
-import InputTime  from "../../Component/Input/InputTime/InputTime"  ;
-import Input      from "../../Component/Input/InputText/InputText"  ;
+import InputDate from "../../Component/Input/InputDate/InputDate";
+import CheckBox from "../../Component/Input/CheckBox/CheckBox";
+import InputTime from "../../Component/Input/InputTime/InputTime";
+import Input from "../../Component/Input/InputText/InputText";
 
 const EditProfile = () => {
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ const EditProfile = () => {
                         </div>
                         <InputText className="input-profile text-primary text-center"></InputText>
                     </div>
-                    <div className="col-12-md col-8 ">
+                    <div className="col-12-md col-4 mt-24">
                         <div className="mb-15 font-700">
                             <Label>Exercise day</Label>
                         </div>
@@ -60,13 +60,15 @@ const EditProfile = () => {
                             <CheckBox dataTg="SU" id="sun"></CheckBox>
                         </ul>
                     </div>
-                    <div className="col-md-12 col-4">
+                    <div className="col-md-12 col-4 mt-24">
                         <div className="mb-15 font-700">
                             <Label>Start time</Label>
                         </div>
-                        <InputTime className="input-profile"></InputTime>
+                        <InputTime></InputTime>
                     </div>
-                    <Input type="submit" value="Sing in" className="btn mb-24 h-40 text-center"></Input>
+                    <div className="col-12">
+                        <Input type="submit" value="Save" className="btn mt-24 h-40 text-center text-upper space-5"></Input>
+                    </div>
                 </form>
             </div>
         </section>

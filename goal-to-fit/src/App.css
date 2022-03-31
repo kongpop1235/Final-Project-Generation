@@ -108,7 +108,7 @@ a {
 .d-flex {
   display: flex;
 }
-.height-100p{
+.height-100p {
   height: 100%;
 }
 .d-inline {
@@ -135,7 +135,7 @@ a {
 .w-100p {
   width: 100%;
 }
-.w-100{
+.w-100 {
   width: 100px;
 }
 .w-240 {
@@ -186,7 +186,7 @@ a {
 }
 
 /* * margin */
-.mx-auto{
+.mx-auto {
   margin: 0px auto 0px auto;
 }
 .my-auto {
@@ -204,7 +204,7 @@ a {
 .mr-15 {
   margin-right: 15px;
 }
-.mb-15{
+.mb-15 {
   margin-bottom: 15px;
 }
 .mt-24 {
@@ -230,4 +230,7 @@ a {
 }
 .font-weight {
   font-weight: bold;
+}
+.space-5 {
+  letter-spacing: 5px;
 }

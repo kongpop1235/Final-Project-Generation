@@ -7,11 +7,11 @@ import "react-datepicker/dist/react-datepicker.css";
 //* css
 import "./InputTime";
 
-const InputTime = ({className}) => {
+const InputTime = () => {
     const [startDate, setStartDate] = useState(new Date());
     return (
         <DatePicker
-            className={className}
+            className="input-profile text-primary text-center"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             showTimeSelect
