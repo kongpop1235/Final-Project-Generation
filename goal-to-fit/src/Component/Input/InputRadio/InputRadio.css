@@ -2,7 +2,7 @@
 .segmented-control {
   grid-column: 0.75;
   grid-row: 0.5;
-  width: 13.58rem;
+  width: 11rem;
   height: 3rem;
   background-color: var(--primary-button-meal);
   border-radius: 0.5rem;
@@ -19,7 +19,7 @@
 }
 .segmented-control__1,
 .segmented-control__2 {
-  width: 6.8rem;
+  width: 6rem;
   height: 3.6rem;
   font-size: 1rem;
   display: flex;
@@ -37,7 +37,7 @@
 .segmented-control__color {
   position: absolute;
   height: 2.5rem;
-  width: 6.2rem;
+  width: 5rem;
   margin-left: 0.3rem;
   border-radius: 0.38rem;
   background-color: var(--donut-chart-color-1);
@@ -48,6 +48,6 @@
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 #tab-2:checked ~ .segmented-control__color {
-  transform: translateX(6.8rem);
+  transform: translateX(5.5rem);
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }

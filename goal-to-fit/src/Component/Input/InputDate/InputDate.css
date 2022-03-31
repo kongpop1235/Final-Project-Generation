@@ -1,9 +1,9 @@
-#DatePicker{
-    height: 3rem;
-    width: 100px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-style: solid;
-    border-color: var(--primary-button-meal);
-    border-radius: 0.5rem;
+#DatePicker {
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  border-style: solid;
+  border-color: var(--primary-button-meal);
+  border-radius: 0.5rem;
 }

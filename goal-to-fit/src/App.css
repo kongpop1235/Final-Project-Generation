@@ -169,12 +169,34 @@ a {
 .px-10 {
   padding: 0px 10px 0px 10px;
 }
-.py-auto  {
-  padding: 100px 0px auto 0px;
+.px-30 {
+  padding: 0px 30px 0px 30px;
 }
+.px-auto {
+  padding: 0px auto 0px auto;
+}
+.py-auto {
+  padding: auto 0px auto 0px;
+}
+.pr-30 {
+  padding-right: 30px;
+}
+.pl-30 {
+  padding-left: 30px;
+}
+
 /* * margin */
+.mx-auto{
+  margin: 0px auto 0px auto;
+}
+.my-auto {
+  margin: auto 0px auto 0px;
+}
 .mx-10 {
   margin: 0px 10px 0px 10px;
+}
+.mx-30 {
+  margin: 0 30px 0 30px;
 }
 .ml-15 {
   margin-left: 15px;

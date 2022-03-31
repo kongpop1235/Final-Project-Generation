@@ -5,21 +5,22 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 //* css
-import "./InputDate.css";
+import "./InputTime";
 
-const InputDate = () => {
+const InputTime = ({className}) => {
     const [startDate, setStartDate] = useState(new Date());
     return (
         <DatePicker
-            id="DatePicker"
-            className="text-primary text-center"
+            className={className}
             selected={startDate}
             onChange={(date) => setStartDate(date)}
-            showYearPicker
-            dateFormat="yyyy"
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={15}
+            timeCaption="Time"
+            dateFormat="h:mm aa"
         />
-    );
-
+    )
 }
 
-export default InputDate;
+export default InputTime;

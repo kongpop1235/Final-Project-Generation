@@ -5,7 +5,7 @@ import "./InputRadio.css";
 const InputRadio = ({value1,value2}) => {
     return (
         <div className="segmented-control">
-            <input type="radio" name="radio2" value="3" id="tab-1" />
+            <input type="radio" name="radio2" value="3" id="tab-1" checked />
             <label htmlFor="tab-1" className="segmented-control__1">
                 <p className="text-upper font-weight">{value1}</p>
             </label>

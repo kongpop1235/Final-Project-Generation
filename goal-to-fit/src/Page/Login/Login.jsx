@@ -11,6 +11,9 @@ import Input from "../../Component/Input/InputText/InputText";
 
 const Login = () => {
   const navigate = useNavigate();
+  const signInClick = () => {
+    navigate("/Edit_profile")
+  }
   const signUpClick = () => {
     navigate("/signup")
   }
@@ -32,7 +35,7 @@ const Login = () => {
           <Label htmlFor="password">Password</Label>
           <br />
           <Input type="password" className="w-500 field mb-24"></Input>
-            <Input type="submit" value="Sing in" className="btn mb-24 h-40 text-center"></Input>
+          <Input type="submit" value="Sing in" className="btn mb-24 h-40 text-center" onClick={signInClick}></Input>
         </form>
         <div className="d-flex space-between">
           <a className="text-primary" href="#" onClick={forgotPasswordClick}>
