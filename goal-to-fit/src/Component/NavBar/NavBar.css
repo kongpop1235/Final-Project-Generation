@@ -1,0 +1,25 @@
+.nav {
+    z-index: 10;
+    height: auto;
+    width: 100%;
+    padding: 30px 30px 30px 30px;
+    margin: 0;
+    top: 0;
+    justify-content: space-between;
+    display: flex;
+    position: fixed;
+}
+
+.list-none{
+    list-style:none
+}
+
+.nav-icon {
+    color: var(--primary-navfooter-color);
+    transition: 0.5s;
+}
+
+.nav-icon:hover{
+    color: var(--secondary-text-color);
+    transition: 0.5s;
+}

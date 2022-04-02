@@ -16,7 +16,9 @@ import Input from "../../Component/Input/InputText/InputText";
 
 const EditProfile = () => {
     const navigate = useNavigate();
-
+    const saveClick = () => {
+        navigate("/Home")
+    }
     return (
         <section className="section-700 d-flex align-center text-primary">
             <div className="container" style={{}}>
@@ -66,7 +68,7 @@ const EditProfile = () => {
                         </div>
                         <InputTime></InputTime>
                     </div>
-                    <div className="col-12">
+                    <div className="col-12" onClick={saveClick}>
                         <Input type="submit" value="Save" className="btn mt-24 h-40 text-center text-upper space-5"></Input>
                     </div>
                 </form>

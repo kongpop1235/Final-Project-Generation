@@ -1,7 +1,4 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 [class*="col-"] {
   float: left;
@@ -12,6 +9,10 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* * column responsive */

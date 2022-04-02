@@ -166,6 +166,7 @@ a {
 }
 
 /* * padding */
+
 .px-10 {
   padding: 0px 10px 0px 10px;
 }
@@ -192,6 +193,9 @@ a {
 .my-auto {
   margin: auto 0px auto 0px;
 }
+.ml-10 {
+  margin: 10px;
+}
 .mx-10 {
   margin: 0px 10px 0px 10px;
 }
@@ -207,6 +211,12 @@ a {
 .mb-15 {
   margin-bottom: 15px;
 }
+.mr-24 {
+  margin-right: 24px;
+}
+.ml-24 {
+  margin-left: 24px;
+}
 .mt-24 {
   margin-top: 24px;
 }
@@ -214,10 +224,13 @@ a {
   margin-bottom: 24px;
 }
 .text-primary {
-  color: #929292;
+  color: var(--primary-navfooter-color);
 }
 .text-secondary {
   color: var(--secondary-text-color);
+}
+.float-left{
+  float: left;
 }
 .float-right {
   float: right;
