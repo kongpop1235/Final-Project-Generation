@@ -30,21 +30,82 @@
   background-color: #555555;
 }
 
-#act-icon {
+.act-icon {
   height: 100px;
   width: 100px;
-  padding: 10px 0px auto 0px;
+  padding: 10px auto 0px auto;
+  margin: 0px;
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267), 0px 0px 0px rgba(128, 128, 128, 0.267) inset;
   transition: 0.5s;
 }
 
-#act-icon:hover {
+.act-icon:hover {
   height: 100px;
   width: 100px;
-  padding: 10px 0px auto 0px;
   border-radius: 8px;
   background-color: rgba(128, 128, 128, 0.267);
   box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267), 2px 2px 10px rgba(128, 128, 128, 0.267) inset;
   transition: 0.5s;
+}
+
+
+/* SEGMENTED-CONTROL */
+.segmented-control-act {
+  grid-column: 0.75;
+  grid-row: 0.5;
+  width: 11rem;
+  height: 2.5rem;
+  background-color: var(--primary-button-meal);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.segmented-control-act input {
+  display: none;
+}
+.segmented-control-act > input:checked + label {
+  transition: all 0.5s ease;
+  color: var(--primary-background-color);
+}
+.segmented-control__1-act,
+.segmented-control__2-act {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--primary-navfooter-color);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.segmented-control__1-act:hover,
+.segmented-control__2-act:hover {
+  color: var(--donut-chart-color-1);
+}
+#tab-act-1:checked ~ .segmented-control__color-act {
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  margin-left: 0.3rem;
+  border-radius: 0.38rem;
+  background-color: var(--donut-chart-color-1);
+  pointer-events: none;
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+#tab-act-2:checked ~ .segmented-control__color-act {
+  
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  margin-left: 0.3rem;
+  border-radius: 0.38rem;
+  background-color: var(--donut-chart-color-1);
+  pointer-events: none;
+  transform: translateX(5.4rem);
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }

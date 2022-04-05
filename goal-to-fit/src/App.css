@@ -134,11 +134,17 @@ a {
 .text-left {
   text-align: left;
 }
+.text-right{
+  text-align: right;
+}
 .justify-center {
   justify-content: center;
 }
 .space-between {
   justify-content: space-between;
+}
+.align-start{
+  align-items: flex-start
 }
 .h-40 {
   height: 40px;

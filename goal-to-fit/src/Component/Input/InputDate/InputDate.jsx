@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./InputDate.css";
 
 const InputDate = () => {
-    const [startDate, setStartDate, className] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date());
     return (
         <DatePicker
             id="DatePicker"
