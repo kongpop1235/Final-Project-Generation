@@ -1,0 +1,57 @@
+[{
+    "id": 1,
+    "act":"Run",
+    "icon":"./svg/runing.svg",
+    "location": "out"
+  }, {
+    "id": 2,
+    "act":"Walk",
+    "icon":"./svg/walking.svg",
+    "location": "out"
+  }, {
+    "id": 3,
+    "act":"Bikking",
+    "icon":"./svg/biking.svg",
+    "location": "out"    
+  }, {
+    "id": 4,
+    "act":"Swimming",
+    "icon":"./svg/swimming.svg",
+    "location": "out"
+  }, {
+    "id": 5,
+    "act":"Pushups",
+    "icon":"./svg/pushups.svg",
+    "location": "in"
+  }, {
+    "id": 6,
+    "act":"Hula hoop",
+    "icon":"./svg/hulaHoop.svg",
+    "location": "in"
+  }, {
+    "id": 7,
+    "act": "Boxing",
+    "icon": "./svg/boxing.svg",
+    "location": "in"
+  }, {
+    "id": 8,
+    "act": "Badminton",
+    "icon": "./svg/badminton.svg",
+    "location": "out"
+  }, {
+    "id": 9,
+    "act": "Yoga",
+    "icon": "./svg/yoga.svg",
+    "location": "in"
+  }, {
+    "id": 10,
+    "act": "Weight",
+    "icon": "./svg/weight.svg",
+    "location": "in"
+  }, {
+    "id": 11,
+    "act": "Bicycle",
+    "icon": "./svg/bicycle.svg",
+    "location": "out"
+  }
+]

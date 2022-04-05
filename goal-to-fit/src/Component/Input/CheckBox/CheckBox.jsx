@@ -7,7 +7,9 @@ const CheckBox = ({ dataTg, id, className }) => {
     return (
         <li id="li-check" className="tg-list-item">
             <input className="tgl tgl-flip" id={id} type="checkbox" />
-            <label className="tgl-btn" data-tg-off={dataTg} data-tg-on={dataTg} for={id}></label>
+            <label className="tgl-btn" data-tg-off={dataTg} data-tg-on={dataTg} for={id}>
+                <p>M</p>
+            </label>
         </li>
     )
 }

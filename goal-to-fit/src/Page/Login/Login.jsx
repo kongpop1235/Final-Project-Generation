@@ -22,7 +22,7 @@ const Login = () => {
   }
 
   return (
-    <section className="section-500 d-flex align-center text-primary">
+    <section className="section-500 d-flex align-center text-primary index-1">
       <div>
         <div className="mb-24">
           <Banner>GOAL TO FIT</Banner>

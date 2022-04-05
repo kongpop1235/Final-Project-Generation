@@ -1,25 +1,29 @@
 .nav {
     z-index: 10;
     height: auto;
-    width: 100%;
-    padding: 30px 30px 30px 30px;
-    margin: 0;
+    width: calc(100% - 100px);
+    padding: 30px 30px 10px 50px;
+    margin: 0px 50px 0px 50px;
     top: 0;
     justify-content: space-between;
     display: flex;
     position: fixed;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .list-none{
     list-style:none
 }
 
-.nav-icon {
+.nav-icon,.nav-icon svg g g {
     color: var(--primary-navfooter-color);
     transition: 0.5s;
+    fill: var(--primary-navfooter-color);
 }
 
-.nav-icon:hover{
+.nav-icon:hover, .nav-icon:hover svg g g{
     color: var(--secondary-text-color);
     transition: 0.5s;
+    fill: var(--secondary-text-color);
 }

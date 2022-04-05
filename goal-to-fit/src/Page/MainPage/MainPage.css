@@ -1,0 +1,12 @@
+#act-left {
+    border: 1px solid var(--primary-button-meal);
+    padding: 30px;
+    border-radius: 5px;
+}
+#act-list {
+    height: 420px;
+    overflow: auto;
+}
+#act-right {
+    padding-left: 50px; 
+}

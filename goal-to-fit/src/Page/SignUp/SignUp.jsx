@@ -40,6 +40,7 @@ const SingUp = () => {
     const PolicyShow = () => {
         setShowPolicy(true);
     }
+    
     return (
         <section className="section-500 d-flex align-center text-primary">
             {/* Terms of Services dialog */}
