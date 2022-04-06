@@ -21,6 +21,10 @@ const Activity = () => {
 
     return (
         <section className="section-full row">
+            {JSONDATA.filter((valuemain) => { return valuemain; })
+                .map((valuemain, key) => {
+                    return (<input type="checkBox" name="checkList" value={valuemain.id} id={valuemain.id} className="d-none" />);
+                })}
             <div className="col-6 mt-15 d-flex space-between align-start">
                 <div className="search row col-10 mx-auto">
                     <div className="row col-12">
@@ -33,22 +37,25 @@ const Activity = () => {
                             }}
                         />
                     </div>
-                    {JSONDATA.filter((val) => {
-                        if (searchTerm == "") {
-                            return val
-                        } else if (val.act.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            return val
-                        }
-                    }).map((val, key) => {
-                        return (
-                            <div className="col-3 mt-15 d-flex justify-center" key={key}>
-                                <div className="act-icon text-center">
-                                    <img className="pt-15" src={val.icon} alt="" />
-                                    <p>{val.act}</p>
+                    <div className="row col-12 mt-15">
+                        {JSONDATA.filter((val) => {
+                            if (searchTerm == "") {
+                                return val
+                            } else if (val.act.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, key) => {
+                            return (
+                                <div className="col-3 mt-15 d-flex justify-center" key={key}>
+                                    {/* <input type="checkBox" name="checkList" value={val.id} id={val.id} className="d-none" /> */}
+                                    <label htmlFor={val.id} className={val.css}>
+                                        <img className="pt-15" src={val.icon} />
+                                        <p>{val.act}</p>
+                                    </label>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
             <div className="col-6 mt-15 d-flex space-between align-start">
@@ -75,11 +82,11 @@ const Activity = () => {
                             }
                         }).map((val, key) => {
                             return (
-                                <div className="col-3 text-center mt-15" key={key}>
-                                    <div className="act-icon">
-                                        <img className="pt-15" src={val.icon} alt="" />
+                                <div className="col-3 mt-15 d-flex justify-center" key={key}>
+                                    <label htmlFor={val.id}  className={val.css}>
+                                        <img className="pt-15" src={val.icon} />
                                         <p>{val.act}</p>
-                                    </div>
+                                    </label>
                                 </div>
                             );
                         })}

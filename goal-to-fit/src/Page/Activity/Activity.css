@@ -36,7 +36,8 @@
   padding: 10px auto 0px auto;
   margin: 0px;
   border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267), 0px 0px 0px rgba(128, 128, 128, 0.267) inset;
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    0px 0px 0px rgba(128, 128, 128, 0.267) inset;
   transition: 0.5s;
 }
 
@@ -45,10 +46,110 @@
   width: 100px;
   border-radius: 8px;
   background-color: rgba(128, 128, 128, 0.267);
-  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267), 2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
   transition: 0.5s;
 }
 
+#run:checked ~ div div div div .label-run {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#walk:checked ~ div div div div .label-walk {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#bikking:checked ~ div div div div .label-bikking {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#swimming:checked ~ div div div div .label-swimming {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#pushups:checked ~ div div div div .label-pushups {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#hulaHoop:checked ~ div div div div .label-hulaHoop {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#boxing:checked ~ div div div div .label-boxing {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#badminton:checked ~ div div div div .label-badminton {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#yoga:checked ~ div div div div .label-yoga {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#weight:checked ~ div div div div .label-weight {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
+#bickycle:checked ~ div div div div .label-bickycle {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.267);
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
+    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
+  transition: 0.5s;
+}
 
 /* SEGMENTED-CONTROL */
 .segmented-control-act {
@@ -98,7 +199,6 @@
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 #tab-act-2:checked ~ .segmented-control__color-act {
-  
   position: absolute;
   height: 2rem;
   width: 5rem;

@@ -288,3 +288,6 @@ a {
 .space-5 {
   letter-spacing: 5px;
 }
+.list-none{
+  list-style: none;
+}

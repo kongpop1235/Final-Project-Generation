@@ -1,55 +1,66 @@
 [{
-    "id": 1,
+    "id": "run",
+    "css": "label-run act-icon text-center",
     "act":"Run",
     "icon":"./svg/runing.svg",
     "location": "out"
   }, {
-    "id": 2,
+    "id": "walk",
+    "css": "label-walk act-icon text-center",
     "act":"Walk",
     "icon":"./svg/walking.svg",
     "location": "out"
   }, {
-    "id": 3,
+    "id": "bikking",
+    "css": "label-bikking act-icon text-center",
     "act":"Bikking",
     "icon":"./svg/biking.svg",
     "location": "out"    
   }, {
-    "id": 4,
+    "id": "swimming",
+    "css": "label-swimming act-icon text-center",
     "act":"Swimming",
     "icon":"./svg/swimming.svg",
     "location": "out"
   }, {
-    "id": 5,
+    "id": "pushups",
+    "css": "label-pushups act-icon text-center",
     "act":"Pushups",
     "icon":"./svg/pushups.svg",
     "location": "in"
   }, {
-    "id": 6,
+    "id": "hulaHoop",
+    "css": "label-hulaHoop act-icon text-center",
     "act":"Hula hoop",
     "icon":"./svg/hulaHoop.svg",
     "location": "in"
   }, {
-    "id": 7,
+    "id": "boxing",
+    "css": "label-boxing act-icon text-center",
     "act": "Boxing",
     "icon": "./svg/boxing.svg",
     "location": "in"
   }, {
-    "id": 8,
+    "id": "badminton",
+    "css": "label-badminton act-icon text-center",
     "act": "Badminton",
     "icon": "./svg/badminton.svg",
     "location": "out"
   }, {
-    "id": 9,
+    "id": "yoga",
+    "css": "label-yoga act-icon text-center",
     "act": "Yoga",
     "icon": "./svg/yoga.svg",
     "location": "in"
   }, {
-    "id": 10,
+    "id": "weight",
+    "css": "label-weight act-icon text-center",
     "act": "Weight",
     "icon": "./svg/weight.svg",
     "location": "in"
   }, {
-    "id": 11,
+    "id": "bickycle",
+    "css": "label-bickycle act-icon text-center",
     "act": "Bicycle",
     "icon": "./svg/bicycle.svg",
     "location": "out"

@@ -12,7 +12,7 @@ import Input from "../../Component/Input/InputText/InputText";
 const Login = () => {
   const navigate = useNavigate();
   const signInClick = () => {
-    navigate("/Edit_profile")
+    navigate("/Home")
   }
   const signUpClick = () => {
     navigate("/signup")

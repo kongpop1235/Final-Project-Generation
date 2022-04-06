@@ -19,6 +19,9 @@ const NavBar = () => {
     const activityClick = () => {
         navigate("/Activity")
     }
+    const profileClick = () => {
+        navigate("/Profile")
+    }
     const logOutClick = () => {
         navigate("/")
     }
@@ -38,6 +41,8 @@ const NavBar = () => {
         header = "Active Reports"
     } else if (Location == '/Activity') {
         header = "Activity"
+    } else if (Location == '/Edit_profile' && Location == '/Profile') {
+        header = "Profile"
     }
 
     return (
@@ -46,7 +51,7 @@ const NavBar = () => {
             <ul className="float-right list-none text-primary d-flex">
                 <li className="d-flex mr-24 align-center nav-icon" onClick={homeClick}><IconHome /><span className="ml-10">Home    </span></li>
                 <li className="d-flex mr-24 align-center nav-icon" onClick={activityClick}><IconActive /><span className="ml-10">Active  </span></li>
-                <li className="d-flex mr-24 align-center nav-icon" ><IconProfile /><span className="ml-10">Profile </span></li>
+                <li className="d-flex mr-24 align-center nav-icon" onClick={profileClick}><IconProfile /><span className="ml-10">Profile </span></li>
                 <li className="d-flex align-center nav-icon" onClick={logOutClick}><IconLogout /><span className="ml-10">Logout  </span></li>
             </ul>            
         </nav>
