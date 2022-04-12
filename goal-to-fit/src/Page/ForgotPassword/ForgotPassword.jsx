@@ -15,7 +15,7 @@ const ForgotPassword = () => {
         navigate("/")
     }
     const signUpClick = () => {
-        navigate("/signUp")
+        navigate("/signup")
     }
     const Changepassword = () => {
         navigate("/")

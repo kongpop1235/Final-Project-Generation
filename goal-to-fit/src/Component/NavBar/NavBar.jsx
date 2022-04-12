@@ -53,7 +53,7 @@ const NavBar = () => {
                 <li className="d-flex mr-24 align-center nav-icon" onClick={activityClick}><IconActive /><span className="ml-10">Active  </span></li>
                 <li className="d-flex mr-24 align-center nav-icon" onClick={profileClick}><IconProfile /><span className="ml-10">Profile </span></li>
                 <li className="d-flex align-center nav-icon" onClick={logOutClick}><IconLogout /><span className="ml-10">Logout  </span></li>
-            </ul>            
+            </ul>
         </nav>
     )
 }
