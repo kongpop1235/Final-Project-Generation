@@ -12,7 +12,38 @@ import Input from "../../Component/Input/InputText/InputText";
 const SingUp = () => {
     const [showService, setShowService] = useState(false);
     const [showPolicy, setShowPolicy] = useState(false);
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [phonenumber, setPhonenumber] = useState("");
+
     const navigate = useNavigate();
+
+    const ruleUsername = new RegExp("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
+
+    const submit = () => {
+    //     if (username == "") {
+    //         alert("input username");
+    //     }
+    //     if (phonenumber == "") {
+    //         alert("input phone number");
+    //     }
+    //     if (password == "") {
+    //         alert("input password")
+    //     }
+    //     if (username != "" && password != "" && phonenumber != "") {
+    //         // alert(`user: ${username},pass: ${password},phone: ${phonenumber}`);
+    //         // if(ruleUsername.test(username)) {
+    //             alert("ok");
+    //         // }
+    //         // navigate("/Edit_profile")
+    //     }
+
+        if (username != "" && password != "" && phonenumber != "") {
+            navigate("/Edit_profile")
+        }
+    }
+
 
     // * link to page
     const signInClick = () => {
@@ -20,9 +51,6 @@ const SingUp = () => {
     }
     const forgotPasswordClick = () => {
         navigate("/forgot_password")
-    }
-    const signUpClick = () => {
-        navigate("/Edit_profile")
     }
 
     // * Terms of Services detail.
@@ -40,7 +68,7 @@ const SingUp = () => {
     const PolicyShow = () => {
         setShowPolicy(true);
     }
-    
+
     return (
         <section className="section-500 d-flex align-center text-primary">
             {/* Terms of Services dialog */}
@@ -128,30 +156,25 @@ const SingUp = () => {
                     <Banner>GOAL TO FIT</Banner>
                 </div>
                 <h1 className="mb-24">Sign Up</h1>
-                <form>
+                <form onSubmit={submit}>
                     <Label htmlFor="username">Username</Label>
-                    <br />
-                    <Input type="text" className="w-500 field mb-24"></Input>
+                    <input type="text" id="username" onChange={user => setUsername(user.target.value)} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number" required className="w-500 field mb-24" />
                     <Label htmlFor="password">Password</Label>
-                    <br />
-                    <Input type="password" className="w-500 field mb-24"></Input>
+                    <input type="password" id="password" onChange={pass => setPassword(pass.target.value)} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number" required className="w-500 field mb-24" />
                     <Label htmlFor="phone">Phone number</Label>
-                    <br />
-                    <Input type="tel" className="w-500 field mb-24"></Input>
+                    <input type="tel" id="phone" onChange={phone => setPhonenumber(phone.target.value)} pattern="[0-9]{10}" title="10 number phone Ex. 0812345678" required className="w-500 field mb-24" />
                     <Input type="checkbox" className="mr-15" name="agree" value="agree"></Input>
                     <p className="d-inline mb-24">I agree to the <a href="#" onClick={ServicesShow}><strong>Terms of Services</strong></a> and <a href="#" onClick={PolicyShow}><strong>Privacy Policy.</strong></a></p>
-                    <span onClick={signUpClick}>
-                        <Input type="submit" value="Sing up" className="btn mb-24 h-40 text-center"></Input>
-                    </span>
+                    <input type="submit" value="Sing up" className="btn mb-24 h-40 text-center" />
+                    <div className="d-flex space-between">
+                        <a className="text-primary" href="#" onClick={forgotPasswordClick}>
+                            Forgot Password?
+                        </a>
+                        <a className="text-center" href="#" onClick={signInClick}>
+                            Have an Account?
+                        </a>
+                    </div>
                 </form>
-                <div className="d-flex space-between">
-                    <a className="text-primary" href="#" onClick={forgotPasswordClick}>
-                        Forgot Password?
-                    </a>
-                    <a className="text-center" href="#" onClick={signInClick}>
-                        Have an Account?
-                    </a>
-                </div>
             </div>
         </section>
     );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // * css
@@ -7,12 +7,22 @@ import "./Login.css";
 // * component
 import Banner from "../../Component/Banner/Banner";
 import Label from "../../Component/Input/LabelText/LabelText";
-import Input from "../../Component/Input/InputText/InputText";
 
 const Login = () => {
   const navigate = useNavigate();
-  const signInClick = () => {
-    navigate("/Home")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submit = () => {
+    if(username != "" && password != "") {
+      navigate("/Home")
+    } else if (username == "" && password != "") {
+      alert("input username");
+    } else if (username != "" && password == "") {
+      alert("input password")
+    } else {
+      alert("input username and password");
+    }
   }
   const signUpClick = () => {
     navigate("/signup")
@@ -28,16 +38,22 @@ const Login = () => {
           <Banner>GOAL TO FIT</Banner>
         </div>
         <h1 className="mb-24">Sign In</h1>
-        <form>
+        <form onSubmit={submit}>
           <Label htmlFor="username">Username</Label>
-          <br />
-          <Input type="text" className="w-500 field mb-24"></Input>
+          <input
+            type="text"
+            value={username}
+            onChange={(inputUser) => setUsername(inputUser.target.value)}
+            className="w-500 field mb-24"
+          />
           <Label htmlFor="password">Password</Label>
-          <br />
-          <Input type="password" className="w-500 field mb-24"></Input>
-          <span onClick={signInClick}>
-            <Input type="submit" value="Sing in" className="btn mb-24 h-40 text-center"></Input>
-          </span>
+          <input
+            type="password"
+            value={password}
+            onChange={(inputPass) => setPassword(inputPass.target.value)}
+            className="w-500 field mb-24"
+          />
+          <input type="submit" value="Sing in" className="btn mb-24 h-40 text-center" />
         </form>
         <div className="d-flex space-between">
           <a className="text-primary" href="#" onClick={forgotPasswordClick}>

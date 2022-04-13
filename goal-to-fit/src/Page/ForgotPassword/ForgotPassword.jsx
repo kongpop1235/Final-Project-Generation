@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // * css
@@ -7,18 +7,32 @@ import "./ForgotPassword.css";
 // * component
 import Banner from "../../Component/Banner/Banner";
 import Label from "../../Component/Input/LabelText/LabelText";
-import Input from "../../Component/Input/InputText/InputText";
 
 const ForgotPassword = () => {
+    const [username, setUsername] = useState("");
+    const [phonenumber, setPhonenumber] = useState("");
+
+
+    const submit = () => {
+        if (username != "" && phonenumber != "") {
+            navigate("/Home")
+        } else if (username == "" && phonenumber != "") {
+            alert("input username");
+        } else if (username != "" && phonenumber == "") {
+            alert("input phone number")
+        } else {
+            alert("input username and phone number");
+        }
+    }
+
+
+    // "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
     const navigate = useNavigate();
     const signInClick = () => {
         navigate("/")
     }
     const signUpClick = () => {
         navigate("/signup")
-    }
-    const Changepassword = () => {
-        navigate("/")
     }
 
     return (
@@ -28,16 +42,15 @@ const ForgotPassword = () => {
                     <Banner>GOAL TO FIT</Banner>
                 </div>
                 <h1 className="mb-24">Forgot Password</h1>
-                <form>
-                    <Label htmlFor="username">Username</Label>
+                <form onSubmit={submit}>
+                    <Label htmlFor="username">{username}</Label>
                     <br />
-                    <Input type="text" className="w-500 field mb-24"></Input>
+                    <input type="text" id="username" value={username} onChange={user => setUsername(user.target.value)} className="w-500 field mb-24" />
                     <Label htmlFor="phone">Phone number</Label>
                     <br />
-                    <Input type="tel" className="w-500 field mb-24"></Input>
-                    <span onClick={Changepassword}>
-                        <Input type="submit" value="Change password" className="btn mb-24 h-40 text-center"></Input>
-                    </span>
+                    <input type="tel" id="phone" value={phonenumber} onChange={pnumber => setPhonenumber(pnumber.target.value)} className="w-500 field mb-24" />
+                    <input type="submit" value="Change Password" className="btn mb-24 h-40 text-center" />
+
                 </form>
                 <div className="d-flex space-between">
                     <a href="#" onClick={signInClick}>Have an Account?</a>
