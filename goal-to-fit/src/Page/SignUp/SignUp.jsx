@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 // ** css
 import './SignUp.css';
@@ -7,7 +8,6 @@ import './SignUp.css';
 // ** components
 import Banner from '../../Component/Banner/Banner'
 import Label from "../../Component/Input/LabelText/LabelText";
-import Input from "../../Component/Input/InputText/InputText";
 
 const SingUp = () => {
     const [showService, setShowService] = useState(false);
@@ -19,29 +19,33 @@ const SingUp = () => {
 
     const navigate = useNavigate();
 
-    const ruleUsername = new RegExp("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
-
-    const submit = () => {
-    //     if (username == "") {
-    //         alert("input username");
-    //     }
-    //     if (phonenumber == "") {
-    //         alert("input phone number");
-    //     }
-    //     if (password == "") {
-    //         alert("input password")
-    //     }
-    //     if (username != "" && password != "" && phonenumber != "") {
-    //         // alert(`user: ${username},pass: ${password},phone: ${phonenumber}`);
-    //         // if(ruleUsername.test(username)) {
-    //             alert("ok");
-    //         // }
-    //         // navigate("/Edit_profile")
-    //     }
-
-        if (username != "" && password != "" && phonenumber != "") {
-            navigate("/Edit_profile")
+    const submit = (event) => {
+        event.preventDefault();
+        const registered = {
+            username: username,
+            phone: phonenumber,
+            password: password,
         }
+        axios.post('http://localhost:4000/api/signup', registered)
+            .then(res => console.log(res.data))
+
+
+        //     if (username == "") {
+        //         alert("input username");
+        //     }
+        //     if (phonenumber == "") {
+        //         alert("input phone number");
+        //     }
+        //     if (password == "") {
+        //         alert("input password")
+        //     }
+        //     if (username != "" && password != "" && phonenumber != "") {
+        //         // alert(`user: ${username},pass: ${password},phone: ${phonenumber}`);
+        //         // if(ruleUsername.test(username)) {
+        //             alert("ok");
+        //         // }
+        //         // navigate("/Edit_profile")
+        //     }
     }
 
 
@@ -158,12 +162,19 @@ const SingUp = () => {
                 <h1 className="mb-24">Sign Up</h1>
                 <form onSubmit={submit}>
                     <Label htmlFor="username">Username</Label>
-                    <input type="text" id="username" onChange={user => setUsername(user.target.value)} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number" required className="w-500 field mb-24" />
+                    <input
+                        type="text"
+                        id="username"
+                        onChange={user => setUsername(user.target.value)}
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                        title="Minimum eight characters, at least one letter and one number"
+                        required
+                        className="w-500 field mb-24" />
                     <Label htmlFor="password">Password</Label>
                     <input type="password" id="password" onChange={pass => setPassword(pass.target.value)} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number" required className="w-500 field mb-24" />
                     <Label htmlFor="phone">Phone number</Label>
                     <input type="tel" id="phone" onChange={phone => setPhonenumber(phone.target.value)} pattern="[0-9]{10}" title="10 number phone Ex. 0812345678" required className="w-500 field mb-24" />
-                    <Input type="checkbox" className="mr-15" name="agree" value="agree"></Input>
+                    <input type="checkbox" className="mr-15" name="agree" value="agree" required />
                     <p className="d-inline mb-24">I agree to the <a href="#" onClick={ServicesShow}><strong>Terms of Services</strong></a> and <a href="#" onClick={PolicyShow}><strong>Privacy Policy.</strong></a></p>
                     <input type="submit" value="Sing up" className="btn mb-24 h-40 text-center" />
                     <div className="d-flex space-between">

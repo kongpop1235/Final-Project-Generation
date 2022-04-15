@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 // * css
 import "./Login.css";
@@ -13,16 +14,19 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const submit = () => {
-    if(username != "" && password != "") {
-      navigate("/Home")
-    } else if (username == "" && password != "") {
-      alert("input username");
-    } else if (username != "" && password == "") {
-      alert("input password")
-    } else {
-      alert("input username and password");
+  const submit = (event) => {
+    event.preventDefault();
+    const login = {
+      username: username,
+      password: password,
     }
+    axios.get('http://localhost:4000/api/login', login)
+      .then(res => console.log(res.data))
+    // if (res.data == true) {
+    //   navigate("/Home")
+    // } else {
+    //   console.log("else");
+    // }
   }
   const signUpClick = () => {
     navigate("/signup")
@@ -37,20 +41,22 @@ const Login = () => {
         <div className="mb-24">
           <Banner>GOAL TO FIT</Banner>
         </div>
-        <h1 className="mb-24">Sign In</h1>
+        <h1 className="mb-24">LogIn</h1>
         <form onSubmit={submit}>
           <Label htmlFor="username">Username</Label>
           <input
+            id="usrname"
             type="text"
-            value={username}
-            onChange={(inputUser) => setUsername(inputUser.target.value)}
+            onChange={user => setUsername(user.target.value)}
+            required
             className="w-500 field mb-24"
           />
           <Label htmlFor="password">Password</Label>
           <input
+            id="password"
             type="password"
-            value={password}
-            onChange={(inputPass) => setPassword(inputPass.target.value)}
+            onChange={pass => setPassword(pass.target.value)}
+            required
             className="w-500 field mb-24"
           />
           <input type="submit" value="Sing in" className="btn mb-24 h-40 text-center" />
