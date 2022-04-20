@@ -31,7 +31,7 @@ const NavBar = () => {
     var check = true;
     var header = "";
     console.log(Location);
-    if(Location == '/'){
+    if (Location == '/') {
         check = false;
     } else if (Location == '/signup') {
         check = false;
@@ -43,16 +43,18 @@ const NavBar = () => {
         header = "Activity"
     } else if (Location == '/Edit_profile' && Location == '/Profile') {
         header = "Profile"
+    } else if (Location == '/Detail') {
+        header = "Detali"
     }
 
     return (
-        <nav className={check === true? "nav container":"d-none"}>
+        <nav className={check === true ? "nav container" : "d-none"}>
             <h1 className="ml-24 font-700 text-primary float-left">{header}</h1>
             <ul className="float-right list-none text-primary d-flex">
-                <li className="d-flex mr-24 align-center nav-icon" onClick={homeClick}><IconHome /><span className="ml-10">Home    </span></li>
-                <li className="d-flex mr-24 align-center nav-icon" onClick={activityClick}><IconActive /><span className="ml-10">Active  </span></li>
-                <li className="d-flex mr-24 align-center nav-icon" onClick={profileClick}><IconProfile /><span className="ml-10">Profile </span></li>
-                <li className="d-flex align-center nav-icon" onClick={logOutClick}><IconLogout /><span className="ml-10">Logout  </span></li>
+                <li className="d-flex mr-24 align-center nav-icon pointer" onClick={homeClick}><IconHome /><span className="ml-10">Home    </span></li>
+                <li className="d-flex mr-24 align-center nav-icon pointer" onClick={activityClick}><IconActive /><span className="ml-10">Active  </span></li>
+                <li className="d-flex mr-24 align-center nav-icon pointer" onClick={profileClick}><IconProfile /><span className="ml-10">Profile </span></li>
+                <li className="d-flex align-center nav-icon pointer" onClick={logOutClick}><IconLogout /><span className="ml-10">Logout  </span></li>
             </ul>
         </nav>
     )

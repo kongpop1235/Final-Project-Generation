@@ -20,6 +20,7 @@ import EditProfile from "./Page/EditProfile/EditProfile";
 import MainPage from "./Page/MainPage/Mainpage";
 import Activity from "./Page/Activity/Activity";
 import Profile from "./Page/Profile/Profile";
+import Detail from "./Page/Detail/Detail";
 
 const App = () => {
   return (
@@ -32,7 +33,8 @@ const App = () => {
         <Route path="/Edit_profile" element={<EditProfile />} />
         <Route path="/Home" element={<MainPage />} />
         <Route path="/Activity" element={<Activity />} />
-        <Route path="/Profile" element={<Profile/>}/>
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/Detail" element={<Detail />}/>
       </Routes>
       <footer>@Copy Right 2022 : Goal to fit</footer>
     </BrowserRouter>

@@ -12,11 +12,13 @@ const InputDate = () => {
     return (
         <DatePicker
             id="DatePicker"
+            type="number"
             className="text-primary text-center"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             showYearPicker
             dateFormat="yyyy"
+            required
         />
     );
 }

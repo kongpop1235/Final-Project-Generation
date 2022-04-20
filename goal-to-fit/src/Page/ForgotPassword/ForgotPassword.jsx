@@ -11,6 +11,7 @@ import Label from "../../Component/Input/LabelText/LabelText";
 const ForgotPassword = () => {
     const [username, setUsername] = useState("");
     const [phonenumber, setPhonenumber] = useState("");
+    const [password, setPassword] = useState("");
 
 
     const submit = () => {
@@ -43,12 +44,14 @@ const ForgotPassword = () => {
                 </div>
                 <h1 className="mb-24">Forgot Password</h1>
                 <form onSubmit={submit}>
-                    <Label htmlFor="username">{username}</Label>
+                    <Label htmlFor="username">Username</Label>
                     <br />
                     <input type="text" id="username" value={username} onChange={user => setUsername(user.target.value)} className="w-500 field mb-24" />
                     <Label htmlFor="phone">Phone number</Label>
                     <br />
                     <input type="tel" id="phone" value={phonenumber} onChange={pnumber => setPhonenumber(pnumber.target.value)} className="w-500 field mb-24" />
+                    <Label htmlFor="password">New Password</Label>
+                    <input type="password" id="password" onChange={pass => setPassword(pass.target.value)} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number" required className="w-500 field mb-24" />
                     <input type="submit" value="Change Password" className="btn mb-24 h-40 text-center" />
 
                 </form>

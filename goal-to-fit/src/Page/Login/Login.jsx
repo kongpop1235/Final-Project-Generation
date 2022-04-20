@@ -11,22 +11,26 @@ import Label from "../../Component/Input/LabelText/LabelText";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
 
   const submit = (event) => {
     event.preventDefault();
-    const login = {
+    const loginset = {
       username: username,
       password: password,
     }
-    axios.get('http://localhost:4000/api/login', login)
-      .then(res => console.log(res.data))
-    // if (res.data == true) {
-    //   navigate("/Home")
-    // } else {
-    //   console.log("else");
-    // }
+    axios.post('http://localhost:4000/api/login', loginset)
+      .then(res => {
+        if (res.data.check === true) {
+          console.log(res.data.data);
+          sessionStorage.setItem("data", JSON.stringify(res.data.data));
+          navigate("/Home")
+        } else {
+          alert("Invalid Username or Password");
+        }
+      }
+      )
   }
   const signUpClick = () => {
     navigate("/signup")
@@ -41,11 +45,10 @@ const Login = () => {
         <div className="mb-24">
           <Banner>GOAL TO FIT</Banner>
         </div>
-        <h1 className="mb-24">LogIn</h1>
+        <h1 className="mb-24">Log In</h1>
         <form onSubmit={submit}>
-          <Label htmlFor="username">Username</Label>
+          <Label>Username</Label>
           <input
-            id="usrname"
             type="text"
             onChange={user => setUsername(user.target.value)}
             required

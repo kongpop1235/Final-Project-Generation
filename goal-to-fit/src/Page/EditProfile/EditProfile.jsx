@@ -1,58 +1,136 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 // * css
 import "./EditProfile.css";
 
 // * component
-import Label from "../../Component/Input/LabelText/LabelText";
-import InputText from "../../Component/Input/InputText/InputText";
-import InputRadio from "../../Component/Input/InputRadio/InputRadio";
-import InputDate from "../../Component/Input/InputDate/InputDate";
-import CheckBox from "../../Component/Input/CheckBox/CheckBox";
-import InputTime from "../../Component/Input/InputTime/InputTime";
-import Input from "../../Component/Input/InputText/InputText";
+// import CheckBox from "../../Component/Input/CheckBox/CheckBox";
 
 const EditProfile = () => {
     const navigate = useNavigate();
-    const saveClick = () => {
-        navigate("/Home")
+    const [birthYear, setBirthYear] = useState(new Date());
+    const [gender, setGender] = useState("Male");
+    const [height, setHeight] = useState();
+    const [weight, setWeight] = useState();
+    const [calories, setCalories] = useState();
+    const sessionOld = JSON.parse(sessionStorage.getItem("data"));
+    
+
+    const male = () => {
+        alert("male");
+    }
+
+
+
+    // const navigate = useNavigate();
+    const submit = (event) => {
+        event.preventDefault();
+        const sessionNew = {
+            username: sessionOld.username,
+            password: sessionOld.password,
+            phone: sessionOld.phone,
+            gender: gender,
+            birth: birthYear.getFullYear(),
+            height: height,
+            weight: weight,
+            calories_gold: calories
+        };
+        sessionStorage.clear();
+        // console.log(event);
+        // console.log(birthYear.getFullYear());
+        // console.log(gender);
+        // console.log(height);
+        // console.log(weight);
+        // console.log(calories);
+        axios.post('http://localhost:4000/api/signup', sessionNew)
+            .then(res => {
+                if (res.data === true) {
+                    alert("ok");
+                    navigate("/");
+                } else {
+                    alert("something worng");
+                }
+            })
     }
     return (
         <section className="section-700 d-flex align-center text-primary">
-            <div className="container" style={{}}>
+            <div className="container">
                 <h1 className="text-center mb-24">Username</h1>
-                <form className="row space-between">
+                <form onSubmit={submit} className="row space-between">
                     <div className="col-6-md col-3 pr-30">
                         <div className="mb-15 font-700">
-                            <Label>Gender</Label>
+                            <label htmlFor="gender">Gender</label>
                         </div>
-                        <InputRadio value1={"male"} value2={"female"}></InputRadio>
+                        <div id="gender" className="segmented-control"
+                            onChange={g => setGender(g.target.value)}>
+                            <input type="radio" name="radio" value="male" id="tab-1" defaultChecked />
+                            <label htmlFor="tab-1" className="segmented-control__1">
+                                <p className="text-upper font-weight">Male</p>
+                            </label>
+                            <input type="radio" name="radio" value="female" id="tab-2" />
+                            <label htmlFor="tab-2" className="segmented-control__2">
+                                <p className="text-upper font-weight">female</p>
+                            </label>
+                            <div className="segmented-control__color"></div>
+                        </div>
                     </div>
                     <div className="col-6-md col-3 px-30">
                         <div className="mb-15 font-700">
-                            <Label>Birth Year</Label>
+                            <label htmlFor="DatePicker">Birth Year</label>
                         </div>
-                        <InputDate></InputDate>
+                        <DatePicker
+                            id="DatePicker"
+                            type="string"
+                            className="text-primary text-center"
+                            selected={birthYear}
+                            onChange={(date) => setBirthYear(date)}
+                            showYearPicker
+                            dateFormat="yyyy"
+                            required
+                        />
                     </div>
                     <div className="col-6-md col-3 pr-30">
                         <div className="mb-15 font-700">
-                            <Label>Height</Label>
+                            <label htmlFor="height">Height</label>
                         </div>
-                        <InputText className="input-profile text-primary text-center"></InputText>
+                        <input
+                            type="number"
+                            id="height"
+                            title="Number only"
+                            required
+                            onChange={h => setHeight(h.target.value)}
+                            className="input-profile text-primary text-center"
+                        />
                     </div>
                     <div className="col-6-md col-3 pr-30">
                         <div className="mb-15 font-700">
-                            <Label>Weight</Label>
+                            <label htmlFor="width" >Weight</label>
                         </div>
-                        <InputText className="input-profile text-primary text-center"></InputText>
+                        <input
+                            type="number"
+                            id="width"
+                            title="Number only"
+                            required
+                            onChange={w => setWeight(w.target.value)}
+                            className="input-profile text-primary text-center"
+                        />
                     </div>
                     <div className="col-12-md col-4 mt-24">
                         <div className="mb-15 font-700">
-                            <Label>Exercise day</Label>
+                            <label htmlFor="calories">Calories Goal (per day)</label>
                         </div>
-                        <ul id="ui-check" class="tg-list space-between py-auto">
+                        <input
+                            type="number"
+                            id="calories"
+                            required
+                            onChange={c => setCalories(c.target.value)}
+                            className="input-profile text-primary text-center"
+                        />
+                        {/* <ul id="ui-check" className="tg-list space-between py-auto">
                             <CheckBox dataTg="M" id="mon" className=""></CheckBox>
                             <CheckBox dataTg="TU" id="tue"></CheckBox>
                             <CheckBox dataTg="W" id="wed"></CheckBox>
@@ -60,17 +138,9 @@ const EditProfile = () => {
                             <CheckBox dataTg="F" id="fri"></CheckBox>
                             <CheckBox dataTg="SA" id="sat"></CheckBox>
                             <CheckBox dataTg="SU" id="sun"></CheckBox>
-                        </ul>
+                        </ul> */}
                     </div>
-                    <div className="col-md-12 col-4 mt-24">
-                        <div className="mb-15 font-700">
-                            <Label>Start time</Label>
-                        </div>
-                        <InputTime></InputTime>
-                    </div>
-                    <div className="col-12" onClick={saveClick}>
-                        <Input type="submit" value="Save" className="btn mt-24 h-40 text-center text-upper space-5"></Input>
-                    </div>
+                    <input type="submit" value="Save" className="btn col-12 mt-24 h-40 text-center text-upper space-5" />
                 </form>
             </div>
         </section>

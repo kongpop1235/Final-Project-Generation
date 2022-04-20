@@ -13,6 +13,26 @@ const signUpTemplate = new mongoose.Schema({
         type: String,
         required: true,
     },
+    gender: {
+        type: String,
+        required: true,
+    },
+    birth: {
+        type: String,
+        required: true,
+    },
+    height: {
+        type: String,
+        required: true,
+    },
+    weight: {
+        type: String,
+        required: true,
+    },
+    calories_gold: {
+        type: Number,
+        required: 0
+    },
     date: {
         type: Date,
         default: Date.now
@@ -29,7 +49,7 @@ const signUpTemplate = new mongoose.Schema({
             duration: {
                 type: Number,
                 default: '0'
-            }
+            },
         },
         run: {
             show: {
@@ -121,16 +141,6 @@ const signUpTemplate = new mongoose.Schema({
                 default: '0'
             }
         },
-        bickycle: {
-            show: {
-                type: Boolean,
-                default: false
-            },
-            duration: {
-                type: Number,
-                default: '0'
-            }
-        }
     }
 })
 

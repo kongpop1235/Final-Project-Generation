@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 // ** css
 import './SignUp.css';
@@ -26,26 +25,8 @@ const SingUp = () => {
             phone: phonenumber,
             password: password,
         }
-        axios.post('http://localhost:4000/api/signup', registered)
-            .then(res => console.log(res.data))
-
-
-        //     if (username == "") {
-        //         alert("input username");
-        //     }
-        //     if (phonenumber == "") {
-        //         alert("input phone number");
-        //     }
-        //     if (password == "") {
-        //         alert("input password")
-        //     }
-        //     if (username != "" && password != "" && phonenumber != "") {
-        //         // alert(`user: ${username},pass: ${password},phone: ${phonenumber}`);
-        //         // if(ruleUsername.test(username)) {
-        //             alert("ok");
-        //         // }
-        //         // navigate("/Edit_profile")
-        //     }
+        sessionStorage.setItem('data', JSON.stringify(registered));
+        navigate("/Edit_profile")
     }
 
 

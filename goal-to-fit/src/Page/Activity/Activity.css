@@ -141,15 +141,6 @@
     2px 2px 10px rgba(128, 128, 128, 0.267) inset;
   transition: 0.5s;
 }
-#bickycle:checked ~ div div div div .label-bickycle {
-  height: 100px;
-  width: 100px;
-  border-radius: 8px;
-  background-color: rgba(128, 128, 128, 0.267);
-  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.267),
-    2px 2px 10px rgba(128, 128, 128, 0.267) inset;
-  transition: 0.5s;
-}
 
 /* SEGMENTED-CONTROL */
 .segmented-control-act {

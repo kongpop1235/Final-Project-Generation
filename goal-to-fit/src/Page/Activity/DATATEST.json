@@ -58,11 +58,5 @@
     "act": "Weight",
     "icon": "./svg/weight.svg",
     "location": "in"
-  }, {
-    "id": "bickycle",
-    "css": "label-bickycle act-icon text-center",
-    "act": "Bicycle",
-    "icon": "./svg/bicycle.svg",
-    "location": "out"
   }
 ]
