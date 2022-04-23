@@ -8,108 +8,20 @@ import "./Activity.css";
 import Input from "../../Component/Input/InputText/InputText";
 
 const Activity = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [Location, setLocation] = useState('');
-    const [sessionActivity, setSessionActivity] = useState([]);
-
     const session = JSON.parse(sessionStorage.getItem("data"));
-    console.log("session.activity");
     console.log(session.activity);
-    console.log("------------------------------");
 
-
+    const sessionActivity = [];
     Object.keys(session.activity).forEach(function (key) {
         // console.log(key) // boxA, boxB, boxC
         // console.log(session.activity[key]) // {color: "red", width: 100}, etc.
         sessionActivity.push({ id: key, detail: session.activity[key] });
     });
-    console.log("sessionActivity");
     console.log(sessionActivity);
-    console.log("------------------------------");
 
 
-    const actMain = [{
-        "id": "run",
-        "css": "label-run act-icon text-center",
-        "act": "Run",
-        "icon": "./svg/runing.svg",
-        "location": "out"
-    }, {
-        "id": "walk",
-        "css": "label-walk act-icon text-center",
-        "act": "Walk",
-        "icon": "./svg/walking.svg",
-        "location": "out"
-    }, {
-        "id": "bikking",
-        "css": "label-bikking act-icon text-center",
-        "act": "Bikking",
-        "icon": "./svg/biking.svg",
-        "location": "out"
-    }, {
-        "id": "swimming",
-        "css": "label-swimming act-icon text-center",
-        "act": "Swimming",
-        "icon": "./svg/swimming.svg",
-        "location": "out"
-    }, {
-        "id": "pushups",
-        "css": "label-pushups act-icon text-center",
-        "act": "Pushups",
-        "icon": "./svg/pushups.svg",
-        "location": "in"
-    }, {
-        "id": "hulaHoop",
-        "css": "label-hulaHoop act-icon text-center",
-        "act": "Hula hoop",
-        "icon": "./svg/hulaHoop.svg",
-        "location": "in"
-    }, {
-        "id": "boxing",
-        "css": "label-boxing act-icon text-center",
-        "act": "Boxing",
-        "icon": "./svg/boxing.svg",
-        "location": "in"
-    }, {
-        "id": "badminton",
-        "css": "label-badminton act-icon text-center",
-        "act": "Badminton",
-        "icon": "./svg/badminton.svg",
-        "location": "out"
-    }, {
-        "id": "yoga",
-        "css": "label-yoga act-icon text-center",
-        "act": "Yoga",
-        "icon": "./svg/yoga.svg",
-        "location": "in"
-    }, {
-        "id": "weight",
-        "css": "label-weight act-icon text-center",
-        "act": "Weight",
-        "icon": "./svg/weight.svg",
-        "location": "in"
-    }
-    ]
-    console.log("actMain");
-    console.log(actMain);
-    console.log("------------------------------");
-
-    const act = [];
-    for (var y = 0; y < sessionActivity.length; y++) {
-        act.push({
-            icon: actMain[y].icon,
-            activity: actMain[y].act,
-            detail: actMain.find(({ id }) => id == sessionActivity[y].id),
-            time: 60 * sessionActivity[y].detail.duration,
-        });
-    };
-    console.log("---------------");
-    console.log("act");
-    console.log(act);
-    console.log("---------------");
-
-
-
+    const [searchTerm, setSearchTerm] = useState('');
+    const [Location, setLocation] = useState('');
 
 
     const inCheck = () => {
@@ -119,9 +31,31 @@ const Activity = () => {
         setLocation(false);
     }
 
+
+
+    const delay = [
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-075",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-100",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-125",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-150",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-175",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-200",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-225",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-250",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-275",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-300",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-325",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-350",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-375",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-400",
+        "col-3 mt-15 d-flex justify-center animated fadeInUp delay-425",
+    ];
+
+
+
     return (
         <section className="section-full row">
-            {actMain.filter((valuemain) => { return valuemain; })
+            {JSONDATA.filter((valuemain) => { return valuemain; })
                 .map((valuemain, key) => {
                     return (<input type="checkBox" name="checkList" value={valuemain.id} id={valuemain.id} className="d-none" />);
                 })}
@@ -130,7 +64,7 @@ const Activity = () => {
                     <div className="row col-12">
                         <input
                             type="text"
-                            className="search__input text-center mb-24"
+                            className="search__input text-center mb-24 animated fadeInUp delay-050"
                             placeholder="Search..."
                             onChange={event => {
                                 setSearchTerm(event.target.value)
@@ -138,7 +72,7 @@ const Activity = () => {
                         />
                     </div>
                     <div className="row col-12 mt-15">
-                        {actMain.filter((val) => {
+                        {JSONDATA.filter((val) => {
                             if (searchTerm == "") {
                                 return val
                             } else if (val.act.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -146,7 +80,8 @@ const Activity = () => {
                             }
                         }).map((val, key) => {
                             return (
-                                <div className="col-3 mt-15 d-flex justify-center" key={key}>
+                                <div className={delay[key]} key={key}>
+                                    {/* <input type="checkBox" name="checkList" value={val.id} id={val.id} className="d-none" /> */}
                                     <label htmlFor={val.id} className={val.css}>
                                         <img className="pt-15" src={val.icon} />
                                         <p>{val.act}</p>
@@ -173,7 +108,7 @@ const Activity = () => {
                         <div className="segmented-control__color-act"></div>
                     </div>
                     <div className="row col-12 mt-15">
-                        {actMain.filter((val) => {
+                        {JSONDATA.filter((val) => {
                             if (Location === true && val.location.includes("in")) {
                                 return val;
                             } else if (Location === false && val.location.includes("out")) {
@@ -181,8 +116,8 @@ const Activity = () => {
                             }
                         }).map((val, key) => {
                             return (
-                                <div className="col-3 mt-15 d-flex justify-center" key={key}>
-                                    <label htmlFor={val.id} className={val.css}>
+                                <div className={delay[key]} key={key}>
+                                    <label htmlFor={val.id}  className={val.css}>
                                         <img className="pt-15" src={val.icon} />
                                         <p>{val.act}</p>
                                     </label>

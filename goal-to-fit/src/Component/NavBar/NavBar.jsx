@@ -49,12 +49,12 @@ const NavBar = () => {
 
     return (
         <nav className={check === true ? "nav container" : "d-none"}>
-            <h1 className="ml-24 font-700 text-primary float-left">{header}</h1>
+            <h1 className="ml-24 font-700 text-primary float-left animated fadeInUp delay-050">{header}</h1>
             <ul className="float-right list-none text-primary d-flex">
-                <li className="d-flex mr-24 align-center nav-icon pointer" onClick={homeClick}><IconHome /><span className="ml-10">Home    </span></li>
-                <li className="d-flex mr-24 align-center nav-icon pointer" onClick={activityClick}><IconActive /><span className="ml-10">Active  </span></li>
-                <li className="d-flex mr-24 align-center nav-icon pointer" onClick={profileClick}><IconProfile /><span className="ml-10">Profile </span></li>
-                <li className="d-flex align-center nav-icon pointer" onClick={logOutClick}><IconLogout /><span className="ml-10">Logout  </span></li>
+                <li className="d-flex mr-24 align-center nav-icon pointer animated fadeInUp delay-075" onClick={homeClick}><IconHome /><span className="ml-10">Home    </span></li>
+                <li className="d-flex mr-24 align-center nav-icon pointer animated fadeInUp delay-100" onClick={activityClick}><IconActive /><span className="ml-10">Active  </span></li>
+                <li className="d-flex mr-24 align-center nav-icon pointer animated fadeInUp delay-125" onClick={profileClick}><IconProfile /><span className="ml-10">Profile </span></li>
+                <li className="d-flex align-center nav-icon pointer animated fadeInUp delay-150" onClick={logOutClick}><IconLogout /><span className="ml-10">Logout  </span></li>
             </ul>
         </nav>
     )

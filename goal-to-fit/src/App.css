@@ -19,6 +19,9 @@
   --primary-icon-color: #4d4d4d;
 
   --primary-button-meal: #c0c0c0;
+
+  --edit-color: #f8d45f;
+  --edit-text-color: rgb(220, 182, 54);
 }
 
 *,
@@ -54,6 +57,31 @@ section {
 }
 body {
   background-color: #f6f6f6;
+}
+#btn-save {
+  border-radius: 5px;
+  border-style: none;
+  background-color: var(--donut-chart-color-3);
+  color: #f6f6f6;
+  width: 100%;
+  box-shadow: 0px 7px 10px 5px rgb(124, 227, 174, 0.6);
+  transition: 0.5s;
+}
+#btn-save:hover {
+  border-radius: 5px;
+  border-style: none;
+  color: #f6f6f6;
+  width: 100%;
+  box-shadow: 0px 0px 0px 0px rgb(124, 227, 174, 0.8);
+  transition: 0.5s;
+}
+#btn-save:active {
+  border-radius: 5px;
+  border-style: none;
+  background-color: #f6f6f6;
+  color: #f85f6a;
+  width: 100%;
+  transition: 0.2s;
 }
 .btn {
   border-radius: 5px;
@@ -192,6 +220,9 @@ a {
 .pt-15 {
   padding-top: 15px;
 }
+.pr-15 {
+  padding-right: 15px;
+}
 .px-30 {
   padding: 0px 30px 0px 30px;
 }
@@ -311,6 +342,14 @@ a {
   border-radius: 0.5rem;
 }
 
+.delete{
+  color: var(--donut-chart-color-1);
+}
+.edit{
+  color: var(--edit-text-color);
+}
+
+
 /* *animation */
 /* *animation Box Hover */
 
@@ -361,34 +400,11 @@ a {
 }
 
 
-
-
-.box__bottom {
-  border-radius: 15px 15px 0px 0px;
-  background: var(--secondary-text-color);
-  color: var(--primary-background-color);
-  transform: translateY(110%);
-}
-.box__bottom:before {
-  bottom: 100%;
-  left: 0;
-  transform-origin: 0 100%;
-}
-.box__bottom:hover ~ .box__center {
-  transform: translateY(-110%);
-}
-
-.bg-red {
-  background-color: red;
-}
-
-
-
-
-
 .box__right {
-  background: blue;
+  fill: var(--primary-background-color);
+  background: var(--secondary-text-color);
   transform: translateX(110%);
+  border-radius: 10px 0px 0px 10px;
 }
 .box__right:before {
   right: 100%;
@@ -400,8 +416,10 @@ a {
 }
 
 .box__left {
-  background: green;
+  fill: var(--primary-background-color);
+  background: var(--edit-color);
   transform: translateX(-110%);
+  border-radius: 0px 10px 10px 0px;
 }
 .box__left:before {
   left: 100%;
@@ -427,4 +445,19 @@ a {
 .box__center {
   background: orange;
   z-index: -1;
+}
+
+.box__bottom {
+  border-radius: 10px 10px 0px 0px;
+  background: var(--secondary-text-color);
+  color: var(--primary-background-color);
+  transform: translateY(110%);
+}
+.box__bottom:before {
+  bottom: 100%;
+  left: 0;
+  transform-origin: 0 100%;
+}
+.box__bottom:hover ~ .box__center {
+  transform: translateY(-110%);
 }

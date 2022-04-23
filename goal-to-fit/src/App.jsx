@@ -8,6 +8,7 @@ import {
 //* css
 import "./App.css";
 import "./Grid.css";
+import "./Animation.css";
 
 //* NavBar
 import NavBar from "./Component/NavBar/NavBar"

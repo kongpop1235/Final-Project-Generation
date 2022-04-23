@@ -12,7 +12,6 @@ const MainPage = () => {
     //* route 
     const navigate = useNavigate();
     const detail = (event) => {
-        alert("detail");
         console.log(event);
         sessionStorage.setItem("detail", event);
         navigate("/Detail");
@@ -140,11 +139,29 @@ const MainPage = () => {
     // for (let x = 0; x < sessionActivity.length; x++) {
     //     act.push({ icon: actMain[x].icon, activity: actMain[x].act, time: "52hr", status: "try again" })
     // }
-    const item = []
+    const item = [];
+    const delay = [
+        "box row mb-10 animated fadeInUp delay-200",
+        "box row mb-10 animated fadeInUp delay-225",
+        "box row mb-10 animated fadeInUp delay-250",
+        "box row mb-10 animated fadeInUp delay-275",
+        "box row mb-10 animated fadeInUp delay-300",
+        "box row mb-10 animated fadeInUp delay-325",
+        "box row mb-10 animated fadeInUp delay-350",
+        "box row mb-10 animated fadeInUp delay-375",
+        "box row mb-10 animated fadeInUp delay-400",
+        "box row mb-10 animated fadeInUp delay-425",
+        "box row mb-10 animated fadeInUp delay-450",
+        "box row mb-10 animated fadeInUp delay-475",
+        "box row mb-10 animated fadeInUp delay-500",
+        "box row mb-10 animated fadeInUp delay-525",
+        "box row mb-10 animated fadeInUp delay-550",
+    ];
     for (let x = 0; x < act.length; x++) {
         item.push(
-            <div className="box row mb-10">
-                <div className="box__bottom d-flex justify-center align-center pointer" onClick={() => detail(act[x].id, )}>
+            // style={{animationDelay: `${delay}`}}
+            <div className={delay[x]}>
+                <div className="box__bottom d-flex justify-center align-center pointer mr-15" onClick={() => detail(act[x].id,)}>
                     <p className="text-upper font-weight letter-3">detail</p>
                 </div>
                 <div className="row space-between w-100p pr-30">
@@ -162,19 +179,19 @@ const MainPage = () => {
     return (
         <section className="section-full">
             <div className="row">
-                <h3 className="col-6 mb-10">Active lists</h3>
-                <h3 className="col-6">Today Progress</h3>
+                <h3 className="col-6 mb-10 animated fadeInUp delay-050">Active lists</h3>
+                <h3 className="col-6 animated fadeInUp delay-075">Today Progress</h3>
             </div>
             <div className="row col-5 border" id="act-left">
                 <div className="row col-6">
-                    <p className="col-12 mb-5">{username}</p>
-                    <p className="col-12 mb-5">Weigth : {weight}</p>
-                    <p className="col-12 mb-5">BMI : {bmi}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-100">{username}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-125">Weigth : {weight}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-150">BMI : {bmi}</p>
                 </div>
                 <div className="row col-4">
-                    <p className="col-12 mb-5">Goal der day : {goal}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-175">Goal der day : {goal}</p>
                 </div>
-                <div className="row col-12 mt-24" id="act-list">
+                <div className="row col-12 mt-24 pr-15" id="act-list">
                     {item}
                 </div>
             </div>
@@ -182,13 +199,13 @@ const MainPage = () => {
                 <div className="col-12">
                     <Line />
                 </div>
-                <div className="col-4">
+                <div className="col-4 animated fadeInUp delay-200">
                     <Doughnut />
                 </div>
-                <div className="col-4">
+                <div className="col-4 animated fadeInUp delay-225">
                     <Doughnut />
                 </div>
-                <div className="col-4">
+                <div className="col-4 animated fadeInUp delay-250">
                     <Doughnut />
                 </div>
             </div>
