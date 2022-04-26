@@ -20,7 +20,7 @@ const Login = () => {
       username: username,
       password: password,
     }
-    axios.post('http://deploy-backend-goal-to-fit.vercel.app/login', loginset)
+    axios.post('https://deploy-backend-goal-to-fit.vercel.app/login', loginset)
       .then(res => {
         if (res.data.check === true) {
           console.log(res.data.data);

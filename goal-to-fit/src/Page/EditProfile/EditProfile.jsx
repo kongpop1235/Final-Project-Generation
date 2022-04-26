@@ -46,7 +46,7 @@ const EditProfile = () => {
         // console.log(height);
         // console.log(weight);
         // console.log(calories);
-        axios.post('http://localhost:4000/api/signup', sessionNew)
+        axios.post('https://deploy-backend-goal-to-fit.vercel.app/signup', sessionNew)
             .then(res => {
                 if (res.data === true) {
                     alert("ok");
