@@ -20,7 +20,7 @@ const Login = () => {
       username: username,
       password: password,
     }
-    axios.post('http://localhost:4000/api/login', loginset)
+    axios.post('http://deploy-backend-goal-to-fit.vercel.app/login', loginset)
       .then(res => {
         if (res.data.check === true) {
           console.log(res.data.data);
@@ -43,7 +43,7 @@ const Login = () => {
     <section className="section-500 d-flex align-center text-primary index-1">
       <div>
         <div className="mb-24">
-          <Banner>GOAL TO FIT</Banner>
+          <Banner>GOAL TO FIT-test</Banner>
         </div>
         <h1 className="mb-24">Log In</h1>
         <form onSubmit={submit}>

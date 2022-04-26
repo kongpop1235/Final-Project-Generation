@@ -4,7 +4,6 @@ const signUpTemplateCopy = require('../modles/signupModles');
 const bcrypt = require('bcrypt');
 // const { deleteOne } = require("../modles/signupModles");
 
-//test
 router.post('/login', (req, res) => {
     signUpTemplateCopy.findOne({ username: req.body.username })
         .then(data => {
