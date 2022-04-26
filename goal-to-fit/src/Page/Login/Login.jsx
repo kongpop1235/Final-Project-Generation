@@ -43,7 +43,7 @@ const Login = () => {
     <section className="section-500 d-flex align-center text-primary index-1">
       <div>
         <div className="mb-24">
-          <Banner>GOAL TO FIT-test</Banner>
+          <Banner>GOAL TO FIT</Banner>
         </div>
         <h1 className="mb-24">Log In</h1>
         <form onSubmit={submit}>
