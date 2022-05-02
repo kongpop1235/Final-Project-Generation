@@ -95,7 +95,7 @@ const EditProfile = () => {
                     </div>
                     <div className="col-6-md col-3 pr-30">
                         <div className="mb-15 font-700">
-                            <label htmlFor="height">Height</label>
+                            <label htmlFor="height">Height(Cm)</label>
                         </div>
                         <input
                             type="number"
@@ -108,7 +108,7 @@ const EditProfile = () => {
                     </div>
                     <div className="col-6-md col-3 pr-30">
                         <div className="mb-15 font-700">
-                            <label htmlFor="width" >Weight</label>
+                            <label htmlFor="width" >Weight(Kg)</label>
                         </div>
                         <input
                             type="number"

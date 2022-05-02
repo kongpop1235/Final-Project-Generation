@@ -20,12 +20,22 @@ const MainPage = () => {
     const session = JSON.parse(sessionStorage.getItem("data"));
     // console.log(session);
 
-    const sessionActivity = [];
-    Object.keys(session.activity).forEach(function (key) {
-        // console.log(key) // boxA, boxB, boxC
-        // console.log(session.activity[key]) // {color: "red", width: 100}, etc.
-        sessionActivity.push({ id: key, detail: session.activity[key] });
-    });
+    const sessionActivity = [
+        "walk",
+        "run",
+        "bikking",
+        "swimming",
+        "pushups",
+        "hulaHoop",
+        "boxing",
+        "badminton",
+        "yoga"
+    ];
+
+
+    // Object.keys(session.activity).forEach(function (key) {
+    //     sessionActivity.push({ id: key, detail: session.activity[key] });
+    // });
     console.log("----------------------");
     console.log("sessionActivity");
     console.log(sessionActivity);
