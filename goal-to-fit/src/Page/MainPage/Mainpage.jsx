@@ -18,7 +18,7 @@ const MainPage = () => {
     };
 
     const session = JSON.parse(sessionStorage.getItem("data"));
-    // console.log(session);
+    console.log(session);
 
     const sessionActivity = [
         "walk",
@@ -128,16 +128,16 @@ const MainPage = () => {
 
     const act = [];
     for (var y = 0; y < sessionActivity.length; y++) {
-        if (sessionActivity[y].detail.show === false) {
-            act.push({
-                id: actMain[y].id,
-                icon: actMain[y].icon,
-                activity: actMain[y].act,
-                status: "try again",
-                detail: actMain.find(({ id }) => id == sessionActivity[y].id),
-                time: 60 * sessionActivity[y].detail.duration
-            });
-        }
+
+        act.push({
+            id: actMain[y].id,
+            icon: actMain[y].icon,
+            activity: actMain[y].act,
+            status: "try again",
+            detail: actMain.find(({ id }) => id == sessionActivity[y].id),
+            time: 60 * sessionActivity[y].detail.duration
+        });
+
     };
     console.log("---------------");
     console.log("act");
