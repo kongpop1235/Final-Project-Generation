@@ -18,26 +18,27 @@ const MainPage = () => {
     };
 
     const session = JSON.parse(sessionStorage.getItem("data"));
+    console.log('session');
     console.log(session);
 
-    const sessionActivity = [
-        "walk",
-        "run",
-        "bikking",
-        "swimming",
-        "pushups",
-        "hulaHoop",
-        "boxing",
-        "badminton",
-        "yoga"
-    ];
+    // const sessionActivity = [
+    //     "walk",
+    //     "run",
+    //     "bikking",
+    //     "swimming",
+    //     "pushups",
+    //     "hulaHoop",
+    //     "boxing",
+    //     "badminton",
+    //     "yoga"
+    // ];
     // Object.keys(session.activity).forEach(function (key) {
     //     sessionActivity.push({ id: key, detail: session.activity[key] });
     // });
-    console.log("----------------------");
-    console.log("sessionActivity");
-    console.log(sessionActivity);
-    console.log("----------------------");
+    // console.log("----------------------");
+    // console.log("sessionActivity");
+    // console.log(sessionActivity);
+    // console.log("----------------------");
 
     // console.log("act name")
     // console.log(activitySessin.length);
@@ -59,11 +60,11 @@ const MainPage = () => {
             "icon": "./svg/runing.svg",
             "location": "out"
         }, {
-            "id": "walk",
-            "css": "label-walk act-icon text-center",
-            "act": "Walk",
-            "icon": "./svg/walking.svg",
-            "location": "out"
+            id: "walk",
+            css: "label-walk act-icon text-center",
+            act: "Walk",
+            icon: "./svg/walking.svg",
+            location: "out"
         }, {
             "id": "bikking",
             "css": "label-bikking act-icon text-center",
@@ -126,6 +127,8 @@ const MainPage = () => {
     console.log("---------------");
     console.log("session[actMain[1].id]");
     console.log(session[`${actMain[1].id}`]);
+    console.log('session.walk');
+    console.log(session.walk);
     console.log("---------------");
 
     const act = [];
