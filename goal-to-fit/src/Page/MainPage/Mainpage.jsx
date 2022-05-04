@@ -31,8 +31,6 @@ const MainPage = () => {
         "badminton",
         "yoga"
     ];
-
-
     // Object.keys(session.activity).forEach(function (key) {
     //     sessionActivity.push({ id: key, detail: session.activity[key] });
     // });
@@ -125,19 +123,19 @@ const MainPage = () => {
     console.log("actMain");
     console.log(actMain);
 
+    console.log("---------------");
+    console.log("session[actMain[1].id]");
+    console.log(session[`${actMain[1].id}`]);
+    console.log("---------------");
 
     const act = [];
     for (var y = 0; y < sessionActivity.length; y++) {
-
-        act.push({
-            id: actMain[y].id,
-            icon: actMain[y].icon,
-            activity: actMain[y].act,
-            status: "try again",
-            detail: actMain.find(({ id }) => id == sessionActivity[y].id),
-            time: 60 * sessionActivity[y].detail.duration
-        });
-
+            act.push({
+                id: actMain[y].id,
+                icon: actMain[y].icon,
+                activity: actMain[y].act,
+                status: "try again",
+            });
     };
     console.log("---------------");
     console.log("act");
