@@ -125,10 +125,12 @@ const MainPage = () => {
     console.log(actMain);
 
     console.log("---------------");
-    console.log("session[actMain[1].id]");
-    console.log(session[`${actMain[1].id}`]);
-    console.log("session.walk");
-    console.log(session.walk);
+    console.log("session");
+    console.log(session);
+    // console.log("session[actMain[1].id]");
+    // console.log(session[`${actMain[1].id}`]);
+    // console.log("session.walk");
+    // console.log(session.walk);
 
     const act = [];
     for (var y = 0; y < sessionActivity.length; y++) {
