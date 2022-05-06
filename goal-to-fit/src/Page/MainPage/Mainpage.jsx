@@ -127,7 +127,7 @@ const MainPage = () => {
     console.log("---------------");
     console.log("session[actMain[1].id]");
     console.log(session[`${actMain[1].id}`]);
-    console.log('session.walk');
+    console.log("session.walk");
     console.log(session.walk);
 
     const act = [];
