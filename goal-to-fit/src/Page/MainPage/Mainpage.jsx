@@ -125,15 +125,13 @@ const MainPage = () => {
     console.log(actMain);
 
     console.log("---------------");
-    console.log("session");
-    console.log(session);
-    // console.log("session[actMain[1].id]");
-    // console.log(session[`${actMain[1].id}`]);
-    // console.log("session.walk");
-    // console.log(session.walk);
+    console.log("session[actMain[1].id]");
+    console.log(session[`${actMain[1].id}`]);
+    console.log("session.walk");
+    console.log(session.walk);
 
     const act = [];
-    for (var y = 0; y < sessionActivity.length; y++) {
+    for (var y = 0; y < actMain.length; y++) {
             act.push({
                 id: actMain[y].id,
                 icon: actMain[y].icon,
