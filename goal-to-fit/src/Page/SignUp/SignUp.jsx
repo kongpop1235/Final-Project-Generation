@@ -147,7 +147,7 @@ const SingUp = () => {
                         type="text"
                         id="username"
                         onChange={user => setUsername(user.target.value)}
-                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{1,}$"
                         title="at least one letter and one number"
                         required
                         className="w-500 field mb-24" />
