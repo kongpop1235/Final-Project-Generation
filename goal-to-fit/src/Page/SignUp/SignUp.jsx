@@ -147,8 +147,8 @@ const SingUp = () => {
                         type="text"
                         id="username"
                         onChange={user => setUsername(user.target.value)}
-                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                        title="Minimum eight characters, at least one letter and one number"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$"
+                        title="at least one letter and one number"
                         required
                         className="w-500 field mb-24" />
                     <Label htmlFor="password">Password</Label>
