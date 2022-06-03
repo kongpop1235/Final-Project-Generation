@@ -44,13 +44,7 @@ const MainPage = () => {
     // console.log(activitySessin.length);
 
     //รายละเอียด
-    const username = session.username;
-    const weight = session.weight;
-    const height = session.height;
-    const bmiclaculater = weight / Math.pow((height / 100), 2);
-    const bmi = bmiclaculater.toFixed(2);
-    const goal = session.calories_gold;
-
+    const bmi = (session.weight / Math.pow((session.height / 100), 2)).toFixed(2);
 
     const actMain = [
         {
@@ -127,8 +121,9 @@ const MainPage = () => {
     console.log("---------------");
     console.log("session[actMain[1].id]");
     console.log(session[`${actMain[1].id}`]);
+    const testSession = session.walk;
     console.log("session.walk");
-    console.log(session.walk);
+    console.log(testSession);
 
     const act = [];
     for (var y = 0; y < actMain.length; y++) {
@@ -194,12 +189,12 @@ const MainPage = () => {
             </div>
             <div className="row col-5 border" id="act-left">
                 <div className="row col-6">
-                    <p className="col-12 mb-5 animated fadeInUp delay-100">{username}</p>
-                    <p className="col-12 mb-5 animated fadeInUp delay-125">Weigth : {weight}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-100">{session.username}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-125">Weigth : {session.weight}</p>
                     <p className="col-12 mb-5 animated fadeInUp delay-150">BMI : {bmi}</p>
                 </div>
                 <div className="row col-4">
-                    <p className="col-12 mb-5 animated fadeInUp delay-175">Goal der day : {goal}</p>
+                    <p className="col-12 mb-5 animated fadeInUp delay-175">Goal der day : {session.calories_gold}</p>
                 </div>
                 <div className="row col-12 mt-24 pr-15" id="act-list">
                     {item}

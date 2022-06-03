@@ -152,7 +152,7 @@ const SingUp = () => {
                         required
                         className="w-500 field mb-24" />
                     <Label htmlFor="password">Password</Label>
-                    <input type="password" id="password" onChange={pass => setPassword(pass.target.value)} pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum eight characters, at least one letter and one number" required className="w-500 field mb-24" />
+                    <input type="password" id="password" onChange={pass => setPassword(pass.target.value)} pattern="^(?=.*[A-Za-z]){8,}$" title="Minimum eight characters" required className="w-500 field mb-24" />
                     <Label htmlFor="phone">Phone number</Label>
                     <input type="tel" id="phone" onChange={phone => setPhonenumber(phone.target.value)} pattern="[0-9]{10}" title="10 number phone Ex. 0812345678" required className="w-500 field mb-24" />
                     <input type="checkbox" className="mr-15" name="agree" value="agree" required />
